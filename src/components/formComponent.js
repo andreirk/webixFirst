@@ -3,11 +3,11 @@ let formComponent =     {
     id: 'myform',
     css: 'main',
     elements:[
-        {type:"section", template:"Edit films"},
-        { view:"text", label:"Title", name:'title' },
-        { view:"text",  label:"Year", name: 'year' },
-        { view:"text",  label:"Rating", name: 'rating' },
-        { view:"text",  label:"Votes", name: 'votes' },
+        {type:"section", template:"Edit films" },
+        { view:"text", label:"Title", name:'title', invalidMessage:"Title must be present!" },
+        { view:"text",  label:"Year", name: 'year', invalidMessage:"Year between 1970 and current" },
+        { view:"text",  label:"Rating", name: 'rating', invalidMessage:"Not empty and not 0" },
+        { view:"text",  label:"Votes", name: 'votes', invalidMessage:"votes not more then 10000" },
 
         {cols:[
             { view:"button", value:"Add new", type:"form",
