@@ -16,7 +16,12 @@ module.exports = {
     }]
   },
   devServer: {
-     contentBase: './public/dist'
+     contentBase: './public/dist',
+    //  proxy: {
+    //     '/mockapi/data/*': {
+    //       target: 'http://localhost:[port]/',
+    //       pathRewrite: { '^/mockapi/data': '' },
+    //   },
    },
    plugins: [
     new CleanWebpackPlugin(['dist']),

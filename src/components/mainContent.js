@@ -19,8 +19,8 @@ let listComponent =  {
     id:"mylist",
     width:200,
     select: true,
-    // data:[ "Dashboard", "Users", "Products", "Locations" ],
-    url:'file://C:/Users/User/Desktop/projects/first/src/data/data.js',
+    data:[ "Dashboard", "Users", "Products", "Locations" ],
+    // url:'/mockapi/data/data.js',
     datatype: 'json',
     on: {
         // onItemClick: function(id){
@@ -35,7 +35,7 @@ let listComponent =  {
 
 
 let datatableComponent =  {
-    view:"datatable", 
+    view:"datatable",
     select: true,
     autoConfig: true,
     id: 'mydata',
@@ -46,7 +46,8 @@ let datatableComponent =  {
     //     { id:"votes",   header:"Votes",         width:100}
     // ],
     editable: true,
-    data: small_film_set
+    url: '/mockapi/data/data.js',
+    // data: small_film_set
 };
 
 

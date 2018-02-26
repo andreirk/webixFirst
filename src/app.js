@@ -15,6 +15,14 @@ console.log('webix', webix)
      });
  })
 
+//  fetch('/mockapi/data/data.js')
+//  .then((res) => {
+//     let arr = res.json()
+//     console.log(typeof arr);
+    
+//     // arr.forEach(console.log)
+//     console.log('fetch result',res.json())
+//  })
 
 
 
