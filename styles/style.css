@@ -1,0 +1,7 @@
+.greenbutton.webix_el_button button{
+    border:1px solid green;
+    color:green;
+    }
+    .greenbutton .webixtype_base{
+    background-color:#90ee90;
+    }
