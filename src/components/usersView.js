@@ -1,4 +1,7 @@
 
+
+const usersJsonUrl = '/mockapi/data/users.js'
+
 let userListFilter = {
     view: 'text',
     id: 'userListFilter',
@@ -43,17 +46,32 @@ let userList = {
     
     template: '#name# from #country#',
     select: true,
-    url: '/mockapi/data/users.js',
+    url: usersJsonUrl,
     datatype: 'json',
 
 }
 
 let userChart = {
-
+    view:"chart",
+    id: 'usersChart',
+    type:"bar",
+    preset:"column",
+    gradient:"falling",
+    barWidth:35,
+    xAxis: {
+        title: 'Age',
+        template: '#age#'
+    },
+    // color:"#f6960a",
+    border:true,
+    value: '#age#',
+    url: usersJsonUrl
 }
 
+
+
 let usersView = {
-    rows: [userListHeader, userList, ]
+    rows: [userListHeader, userList, userChart]
 }
 
 export default usersView

@@ -1,6 +1,7 @@
 import * as _ from 'lodash'
 import formComponent from './formComponent'
 import usersView from './usersView';
+import productsPage from './productsPage';
 
 let JSONUrl = '/mockapi/data/data.js';
 
@@ -57,8 +58,8 @@ export default  {
         {cells: [
             {id: "Dashboard", cols: [datatableComponent,  { view:"resizer" }, formComponent]},
             {id: 'Users', rows: [usersView]},
-            {id: 'Products', template: "Products View"},
-            {id: 'Locations', template: "Locations View"},
+            {id: 'Products', rows: [productsPage]},
+            // {id: 'Locations', template: "Locations View"},
 
         ]}
 
