@@ -13,16 +13,17 @@ console.log('webix', webix)
         id:"app",
         rows:[toolbar, main, footer]
      });
+
+    setTimeout(() => {
+        $$("myform").attachEvent("onChange", function(){
+            this.save();
+        });
+        $$('myform').bind($$('mydata'))
+
+    }, 1000) 
+    
  })
 
-//  fetch('/mockapi/data/data.js')
-//  .then((res) => {
-//     let arr = res.json()
-//     console.log(typeof arr);
-    
-//     // arr.forEach(console.log)
-//     console.log('fetch result',res.json())
-//  })
 
 
 
