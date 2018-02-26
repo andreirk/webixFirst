@@ -5,12 +5,15 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
+    "serv":  "node server/server.js",
     "start": "webpack-dev-server --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "dotenv": "4.0.0",
+    "jest": "20.0.4",
     "webpack": "^3.11.0",
     "webpack-dev-server": "2.5.1"
   },
@@ -22,6 +25,8 @@
     "babel-plugin-transform-object-rest-spread": "6.23.0",
     "babel-polyfill": "6.26.0",
     "babel-preset-env": "1.5.2",
+    "express": "4.15.4",
+    "extract-text-webpack-plugin": "^3.0.2",
     "clean-webpack-plugin": "^0.1.18",
     "css-loader": "^0.28.9",
     "html-webpack-plugin": "^2.30.1",
