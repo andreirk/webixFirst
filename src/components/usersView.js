@@ -41,9 +41,10 @@ let userListHeader = {
 }
 
 let userList = {
-    view:"list",
+    view:"editlist",
     id:"usersList",
-    
+    editable: true,
+    editor: 'text',
     template: '#name# from #country#',
     select: true,
     url: usersJsonUrl,

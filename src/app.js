@@ -4,14 +4,15 @@ import main from './components/mainContent'
 import footer from './components/footer'
 
 
-console.log('toolbar', toolbar)
-console.log('webix', webix)
-
-
  webix.ready(() => {
+
+    webix.protoUI({
+        name:"editlist" // or "edittree", "dataview-edit" in case you work with them
+    }, webix.EditAbility, webix.ui.list);
+
     webix.ui({
         id:"app",
-        rows:[toolbar, main, footer]
+        rows:[toolbar, main, { view:"resizer" }, footer]
      });
 
     setTimeout(() => {
@@ -20,7 +21,9 @@ console.log('webix', webix)
         });
         $$('myform').bind($$('mydata'))
 
-    }, 1000) 
+        $$('mydataview').sync($$("mydata"))
+        
+    }, 100) 
     
  })
 

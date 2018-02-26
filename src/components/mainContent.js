@@ -15,7 +15,7 @@ let listComponent =  {
     id:"mylist",
     width:200,
     select: true,
-    data:[ "Dashboard", "Users", "Products", "Locations" ],
+    data:[ "Dashboard", "Users", "Products", ],
     datatype: 'json',
     on: {
         // onItemClick: function(id){
@@ -34,11 +34,13 @@ let datatableComponent =  {
     select: true,
     // autoConfig: true,
     id: 'mydata',
+    height:400,
+    width:300,
     columns:[
         { id:"rank",    header:"Rank",   width:50, },
-        { id:"title",   header: ["Film Title", {content:"textFilter"}, ], width:200,},
-        { id:"year",    header: ["Released", {content:"textFilter"}, ] ,  width:80},
-        { id:"votes",   header: ["Votes", {content:"textFilter"}, ],   width:100}
+        { id:"title",   header: ["Film Title", {content:"textFilter"}, ], editor:'text', width:200,},
+        { id:"year",    header: ["Released", {content:"textFilter"}, ], editor:'text', width:80},
+        { id:"votes",   header: ["Votes", {content:"textFilter"}, ], editor:'text',  width:100}
     ],
     editable: true,
     url: JSONUrl,
@@ -49,6 +51,17 @@ let datatableComponent =  {
     // data: small_film_set
 };
 
+const dataview = {
+    view:"dataview",
+    id: "mydataview",
+    type: {
+        height: 80,
+        width: 200
+    },
+    template:"<div> <div> #id#. #title# </div> <div></div>#year# </div> ",
+    xCount:2, //the number of items in a row
+    yCount:4 //the number of items in a column
+}
 
 
 export default  {
@@ -56,16 +69,14 @@ export default  {
         listComponent,
         { view:"resizer" },
         {cells: [
-            {id: "Dashboard", cols: [datatableComponent,  { view:"resizer" }, formComponent]},
+            {id: "Dashboard", cols: [{rows: [datatableComponent, dataview ]},  { view:"resizer" }, formComponent]},
             {id: 'Users', rows: [usersView]},
             {id: 'Products', rows: [productsPage]},
             // {id: 'Locations', template: "Locations View"},
 
         ]}
-
     ]
  };
-
 
 
  function strip(text){
