@@ -43,6 +43,7 @@ let userListHeader = {
 let userList = {
     view:"editlist",
     id:"usersList",
+    value: "name",
     editable: true,
     editor: 'text',
     template: '#name# from #country#',
@@ -66,7 +67,7 @@ let userChart = {
     // color:"#f6960a",
     border:true,
     value: '#age#',
-    url: usersJsonUrl
+    // url: usersJsonUrl
 }
 
 

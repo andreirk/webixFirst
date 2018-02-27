@@ -3,6 +3,7 @@ import formComponent from './formComponent'
 import usersView from './usersView';
 import productsPage from './productsPage';
 
+
 let JSONUrl = '/mockapi/data/data.js';
 
 var small_film_set = [
@@ -79,6 +80,3 @@ export default  {
  };
 
 
- function strip(text){
-    return text.replace(/<(?:.|\n)*?>/gm, '');
- }

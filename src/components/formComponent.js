@@ -1,9 +1,11 @@
+import {strip} from '../utils/common'
+
 let formComponent =     {
     view:"form", 
     id: 'myform',
     css: 'main',
     elements:[
-        {type:"section", template:"Edit films" },
+        { type:"section", template:"Edit films" },
         { view:"text", label:"Title", name:'title', invalidMessage:"Title must be present!" },
         { view:"text",  label:"Year", name: 'year', invalidMessage:"Year between 1970 and current" },
         { view:"text",  label:"Rating", name: 'rating', invalidMessage:"Not empty and not 0" },
@@ -22,7 +24,10 @@ let formComponent =     {
                                 let newResults = {}
                                 _.map(values, function (value, key) {
                                     console.log('key value', {key, value})
-                                    newResults[key] = strip(value)
+                                    if(typeof value === 'string'){
+                                        newResults[key] = strip(value)
+                                    }
+                                    
                                 })
                                 $$("mydata").add(newResults);
                                 webix.message({
@@ -37,15 +42,28 @@ let formComponent =     {
                                     expire: -1
                                 })
                             }
-                            webix.modalbox({
-                                title:"Custom title",
-                                buttons:["Yes", "No", "Maybe"],
+                            let form2 = webix.copy(formComponent);
+                            form2.config.id = 'formCopy'
+                            webix.ui({
+                                view: "window",
+                                id:"my_window",
+                                head:"My Window",
+                                height:450,
+                                modal: true,
                                 width:500,
-                                text: `${values.title}`,
-                                callback:function(result){
-                                    // some code
-                                }
-                            })
+                                position: "center",
+                                left:250, top:250,
+                                body:form2
+                            }).show()
+                            // webix.modalbox({
+                            //     title:"Custom title",
+                            //     buttons:["Yes", "No", "Maybe"],
+                            //     width:500,
+                            //     text: `${values.title}`,
+                            //     callback:function(result){
+
+                            //     }
+                            // })
                             // webix.message('item was cliced ' + id)
                         }
                     }  

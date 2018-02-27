@@ -5,6 +5,7 @@ import footer from './components/footer'
 
 
  webix.ready(() => {
+    webix.debug = true;
 
     webix.protoUI({
         name:"editlist" // or "edittree", "dataview-edit" in case you work with them
@@ -15,15 +16,16 @@ import footer from './components/footer'
         rows:[toolbar, main, { view:"resizer" }, footer]
      });
 
-    setTimeout(() => {
-        $$("myform").attachEvent("onChange", function(){
-            this.save();
-        });
-        $$('myform').bind($$('mydata'))
 
-        $$('mydataview').sync($$("mydata"))
-        
-    }, 100) 
+    $$("myform").attachEvent("onChange", function(){
+        this.save();
+    });
+    $$('myform').bind($$('mydata'))
+
+    $$('mydataview').sync($$("mydata"))
+
+    $$('usersChart').sync($$("usersList"))
+    
     
  })
 

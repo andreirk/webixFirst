@@ -7,7 +7,7 @@ const productsPage = {
     // autoconfig: true,
     columns:[
       { id:"id", header:"", width:50},
-      { id:"value", editor: 'text', header:"Film title",  width:250,
+      { id:"title", editor: 'text', header:"Film title",  width:250,
        template:"{common.treetable()} #title#" },
       { id:"price", editor: 'text', header:"Price",
        template: function (obj) {
